@@ -1,8 +1,8 @@
-// **المفتاح الحقيقي موجود هنا**
-const API_KEY = "9c72ce77293a4a88acd125939250811"; 
-const DEFAULT_CITY = "Cairo"; // المدينة الافتراضية للتحميل الأولي
 
-// جلب العناصر من HTML
+const API_KEY = "9c72ce77293a4a88acd125939250811"; 
+const DEFAULT_CITY = "Cairo"; 
+
+
 const cityInputEl = document.getElementById('city-input');
 const findButton = document.getElementById('find-button');
 const currentCityEl = document.getElementById('current-city');
@@ -63,7 +63,7 @@ function displayForecast(data) {
     forecastDays.forEach(day => {
         const { dayName, dayMonth } = formatDate(day.date);
 
-        // إنشاء كارت الطقس
+  
         const card = document.createElement('div');
         card.className = 'col-lg-6 col-md-6 col-12 p-3 forecast-card';
 
@@ -84,7 +84,7 @@ function displayForecast(data) {
                     <h5 class="text-white mt-2 mb-1">${day.day.condition.text}</h5>
                 </div>
 
-                <!-- درجات الحرارة -->
+             
                 <div class="text-center mt-3">
                     <p class="text-white fs-4 fw-bold mb-1">${Math.round(day.day.maxtemp_c)}°C</p>
                     <p class="text-white-50 mb-0">${Math.round(day.day.mintemp_c)}°C</p>
@@ -98,24 +98,23 @@ function displayForecast(data) {
 
 
 
-// تشغيل البحث عند الضغط على الزرار
+
 findButton.addEventListener('click', () => {
     const city = cityInputEl.value.trim();
     if (city) fetchWeatherData(city);
 });
 
-// 🔥 الجديد هنا 🔥
-// تشغيل البحث تلقائي أثناء الكتابة
+
 let typingTimer;
 cityInputEl.addEventListener('input', () => {
-    clearTimeout(typingTimer); // نمنع البحث عن كل حرف بسرعة
+    clearTimeout(typingTimer); 
     const city = cityInputEl.value.trim();
     if (city.length > 1) {
         typingTimer = setTimeout(() => {
             fetchWeatherData(city);
-        }, 600); // يعمل بعد نص ثانية من توقف الكتابة
+        }, 600); 
     }
 });
 
-// تحميل البيانات أول ما الصفحة تفتح
+
 fetchWeatherData(DEFAULT_CITY);
