@@ -1,0 +1,252 @@
+/* Global and Dark Theme Styles */
+body {
+    font-family: 'Inter', sans-serif; 
+    margin: 0;
+    padding: 0;
+    background-color: #212529; 
+    direction: ltr; 
+    color: white;
+    min-height: 100vh;
+}
+
+.weather-app {
+    min-height: 100vh;
+}
+
+
+.navbar {
+    background-color: #1E202B; 
+    padding: 10px 0;
+    border-bottom: 1px solid #3c4454;
+}
+
+.tagline-header {
+    font-size: 0.8rem;
+    opacity: 0.5;
+}
+
+/* Main Content and Background Image */
+.main-content {
+    background-image: url('../images/banner.png'); 
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding: 150px 0 100px; 
+    
+}
+
+/* Search Bar Positioning */
+.search-bar-container {
+    position: absolute;
+    top: 50px; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 800px;
+    border-radius: 10px importan;
+}
+
+.search-box .form-control {
+    background-color: #3b4252;
+    border: none;
+    color: white;
+    padding: 1rem 1.5rem;
+
+    border-radius: 0.5rem 0 0 0.5rem !important; 
+}
+
+.search-box .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.search-box .btn-info {
+    background-color: #007bff; 
+    border-color: #007bff;
+    color: white;
+    padding: 1rem 2rem;
+ 
+    border-radius: 0 0.5rem 0.5rem 0 !important; 
+}
+
+/* Floating Weather Display Box */
+.weather-display-box {
+    position: absolute;
+    top: 150px; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    max-width: 1000px;
+    z-index: 10;
+    color: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#weather-results {
+    background-color: rgba(43, 49, 60, 0.95); /* Semi-transparent dark background for the box */
+}
+
+/* Current Day Card (Column 1) */
+.current-day-card {
+    background-color: #2b313c; 
+}
+
+.current-temp-large {
+    font-size: 5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+/* Forecast Cards (Column 2) */
+.forecast-card {
+    /* padding: 40px 10px; */
+    text-align: center;
+    border-left: 1px solid #3c4454; 
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center;
+    align-items: center; */
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.forecast-card:last-child {
+    border-left: none; 
+}
+
+.forecast-card h4 {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.forecast-card .max-temp {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+
+.forecast-card .min-temp {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.forecast-card .condition-text-forecast {
+    color: #007bff;
+    font-size: 1rem;
+}
+
+footer {
+    background-color: #1E202B; 
+    padding: 40px 0; 
+    border-top: 1px solid #3c4454;
+    width: 100%;
+}
+
+.footer-content-wrapper {
+    /* To contain the content and center it */
+    padding: 0 15px;
+}
+
+.footer-content {
+    /* Contains the Subscribe form and social icons */
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #3c4454; /* Separator line */
+}
+
+/* Subscribe Form Styling (Left side of footer) */
+.subscribe-form {
+    display: flex;
+    width: 50%; /* Takes half of the container width on large screens */
+    max-width: 500px;
+}
+
+.subscribe-form .form-control {
+    background-color: #3b4252;
+    border: none;
+    color: white;
+    padding: 0.8rem 1.2rem;
+    border-radius: 25px 0 0 25px; /* Rounded left */
+    font-size: 1rem;
+}
+
+.subscribe-form .btn-subscribe {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 0 25px 25px 0; /* Rounded right */
+    transition: background-color 0.2s;
+}
+
+.subscribe-form .btn-subscribe:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+/* Social Icons Styling (Right side of footer) */
+.footer-social-icons {
+    display: flex;
+    gap: 10px;
+}
+ 
+footer
+{
+    background-color: #262936;
+}
+.footer-social-icons i {
+    background-color: #3c4454; 
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Circle shape */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    transition: background-color 0.2s, color 0.2s;
+    cursor: pointer;
+}
+
+.footer-social-icons i:hover {
+    background-color: #007bff; 
+    color: white;
+}
+
+/* Copyright Text */
+.footer-copyright {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    padding-top: 10px;
+}
+/* Responsiveness for Mobile */
+@media (max-width: 992px) {
+    .main-content {
+        padding-top: 250px; 
+        min-height: 900px;
+    }
+    .weather-display-box {
+        position: relative;
+        top: 0;
+        transform: none;
+        left: 0;
+        margin-top: 100px;
+    }
+    .forecast-card {
+        border-left: none;
+        border-top: 1px solid #3c4454;
+    }
+    #forecast-container {
+        flex-direction: column;
+    }
+    .current-day-card {
+        padding-bottom: 20px;
+    }
+}
